@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Games — G-POWER HOUSE</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="gradient-bg">
+  <header class="topbar">
+    <img src="assets/img/logo.png" class="logo-small" alt="logo" />
+    <div class="header-actions">
+      <a href="history.html" class="link">History</a>
+      <a href="profile.html" class="link">Profile</a>
+      <a href="index.html" class="link">Home</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <input id="searchInput" placeholder="Search games..." style="flex:1;" />
+        <select id="categoryFilter" style="width:160px;">
+          <option value="all">All Categories</option>
+          <option value="action">Action</option>
+          <option value="puzzle">Puzzle</option>
+          <option value="racing">Racing</option>
+          <option value="sports">Sports</option>
+        </select>
+      </div>
+
+      <section id="gamesGrid" class="games-grid"></section>
+    </section>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-storage-compat.js"></script>
+
+  <script src="firebase/firebase-config.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

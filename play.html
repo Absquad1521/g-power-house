@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Play — G-POWER HOUSE</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="gradient-bg">
+  <header class="topbar">
+    <img src="assets/img/logo.png" class="logo-small" alt="logo" />
+    <div class="header-actions">
+      <a href="games.html" class="link">Back to Games</a>
+      <a id="openNew" class="link" target="_blank">Open external</a>
+    </div>
+  </header>
+
+  <main style="padding:12px;">
+    <div class="card" style="height:75vh; display:flex; flex-direction:column;">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+        <h3 id="gameTitle">Loading…</h3>
+        <div>
+          <button id="openDirect" class="btn outline">Open External</button>
+        </div>
+      </div>
+      <div style="flex:1; margin-top:8px;">
+        <iframe id="gameFrame" src="" style="width:100%; height:100%; border:none; border-radius:8px;"></iframe>
+      </div>
+    </div>
+  </main>
+
+  <script src="firebase/firebase-config.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script>
+    function getQueryParam(name){
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name);
+    }
+    const gameId = getQueryParam('game');
+    if(!gameId){
+      document.getElementById('gameTitle').textContent = 'Game not specified';
+    } else {
+      setTimeout(() => {
+        const g = (window.GAMES || []).find(x => x.id === gameId) || JSON.parse(localStorage.getItem('gpower_games') || '[]').find(x=>x.id===gameId);
+        if(!g){ document.getElementById('gameTitle').textContent = 'Game not found'; return; }
+        document.getElementById('gameTitle').textContent = g.title;
+        document.getElementById('gameFrame').src = g.url;
+        document.getElementById('openDirect').addEventListener('click', () => window.open(g.url,'_blank'));
+        document.getElementById('openNew').href = g.url;
+      }, 800);
+    }
+  </script>
+</body>
+</html>

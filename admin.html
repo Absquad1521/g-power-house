@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — G-POWER HOUSE</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="gradient-bg">
+  <header class="topbar">
+    <img src="assets/img/logo.png" class="logo-small" alt="logo" />
+    <div class="header-actions">
+      <a href="games.html" class="link">Public Games</a>
+      <a href="index.html" class="link">Home</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Admin - Add Game</h2>
+
+    <!-- adminRoot will be hidden for non-admins -->
+    <div id="adminRoot">
+      <div class="card container-small">
+        <form id="adminForm">
+          <label>Title</label>
+          <input id="gameTitle" required />
+          <label>Category</label>
+          <input id="gameCategory" placeholder="e.g. action, puzzle" />
+          <label>External Game URL</label>
+          <input id="gameURL" placeholder="https://..." required />
+          <label>Thumb Image (optional)</label>
+          <input id="gameThumb" type="file" accept="image/*" />
+          <button type="submit" class="btn">Add Game</button>
+        </form>
+      </div>
+
+      <h3 style="margin-top:16px;">Existing games</h3>
+      <div id="adminGamesList" class="games-grid"></div>
+    </div>
+
+    <div id="adminFallback" style="display:none;">
+      <p class="muted">Checking admin credentials…</p>
+    </div>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-storage-compat.js"></script>
+
+  <script src="firebase/firebase-config.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>

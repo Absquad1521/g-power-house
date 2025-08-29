@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Register — G-POWER HOUSE</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="gradient-bg">
+  <header class="topbar">
+    <img src="assets/img/logo.png" class="logo-small" alt="logo" />
+    <h2 style="margin:0">Register</h2>
+    <div></div>
+  </header>
+
+  <main class="card container-small">
+    <form id="registerForm">
+      <label for="regName">Name</label>
+      <input id="regName" type="text" required />
+
+      <label for="regEmail">Email</label>
+      <input id="regEmail" type="email" required />
+
+      <label for="regPassword">Password</label>
+      <input id="regPassword" type="password" required />
+
+      <label for="regConfirmPassword">Confirm Password</label>
+      <input id="regConfirmPassword" type="password" required />
+
+      <label for="regPhone">Phone Number</label>
+      <input id="regPhone" type="tel" />
+
+      <label>Profile Picture</label>
+      <input id="regPicture" type="file" accept="image/*" />
+
+      <button type="submit" class="btn">Register</button>
+
+      <div class="or">OR</div>
+      <button type="button" id="googleRegister" class="btn outline">Register with Google</button>
+
+      <p class="muted" style="margin-top:12px;">Already have an account? <a href="login.html" style="color:#fff;text-decoration:underline;">Login</a></p>
+    </form>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-storage-compat.js"></script>
+
+  <script src="firebase/firebase-config.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

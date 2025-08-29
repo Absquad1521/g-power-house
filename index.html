@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>G-POWER HOUSE — Home</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="gradient-bg">
+  <header class="topbar">
+    <img src="assets/img/logo.png" class="logo-small" alt="G-Power House" />
+    <div class="header-actions">
+      <a href="profile.html" class="link">Profile</a>
+      <a href="games.html" class="link">Games</a>
+      <a href="admin.html" class="link">Admin</a>
+    </div>
+  </header>
+
+  <main class="centered-content container">
+    <h1 style="font-size:34px; margin-bottom:6px;">Welcome to G-POWER HOUSE</h1>
+    <p class="muted">Play thousands of web games — instant links, one click play.</p>
+    <a href="games.html" class="btn big">LET'S GO!!!</a>
+  </main>
+
+  <!-- Firebase SDKs (only required if using Firebase) -->
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.20.0/firebase-storage-compat.js"></script>
+
+  <!-- app config + main script -->
+  <script src="firebase/firebase-config.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

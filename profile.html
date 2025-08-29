@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profile — G-POWER HOUSE</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="gradient-bg">
+  <header class="topbar">
+    <img src="assets/img/logo.png" class="logo-small" alt="logo" />
+    <div class="header-actions">
+      <a href="index.html" class="link">Home</a>
+      <a href="games.html" class="link">Games</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="profile-card card">
+      <img id="profilePic" src="assets/img/default-avatar.png" alt="profile" class="profile-pic" />
+      <h3 id="profileName">Guest</h3>
+      <p id="profileEmail" class="muted">—</p>
+      <p id="profilePhone" class="muted">—</p>
+
+      <label>Change Profile Picture</label>
+      <input type="file" id="profilePicInput" accept="image/*" />
+
+      <button id="logoutBtn" class="btn outline">Logout</button>
+    </div>
+  </main>
+
+  <script src="firebase/firebase-config.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
